@@ -1,4 +1,30 @@
-\section{El Banburismus: Estadística Bayesiana aplicada}
+\section{Banburismus: Optimización Estadística y Probabilidad Bayesiana}
 
-% Explicar cómo Turing utilizó la probabilidad para reducir el espacio de búsqueda
-% El impacto en la eficiencia y el ahorro de tiempo
+Si bien la Bombe representó el triunfo de la mecanización lógica, su operatividad estaba limitada por el recurso más escaso de Bletchley Park: el tiempo de máquina \cite{mahon1945history}. En 1941, con un número reducido de unidades disponibles, era inviable probar los 336 órdenes de rotores posibles para cada mensaje de la Marina alemana (\textit{Dolphin}). Para resolver este cuello de botella, Alan Turing desarrolló el \textit{Banburismus}, un proceso manual de criptoanálisis estadístico que utilizaba la probabilidad bayesiana para identificar los rotores correctos antes de recurrir a la Bombe \cite{copeland2006colossus, lahoz2012turing}.
+
+\subsection{Fundamentos Lógicos: El Fenómeno de las Repeticiones}
+
+El Banburismus se basaba en una observación estadística fundamental sobre la estructura del lenguaje alemán frente al azar. Si se comparan dos secuencias de letras aleatorias, la probabilidad de que coincida una letra en la misma posición es de $1/26$ (aproximadamente un $3.8\%$). Sin embargo, Turing y su equipo calcularon que, en el alemán naval, debido a las redundancias lingüísticas, la probabilidad de coincidencia entre dos textos planos es de aproximadamente $1/17$ (un $5.9\%$) \cite{mahon1945history, copeland2006colossus}.
+
+El objetivo del método era encontrar el ``ajuste en profundidad'' (\textit{setting in depth}), que ocurría cuando dos mensajes cifrados habían sido generados con la misma configuración de rotores en una sección de su longitud \cite{mahon1945history}. Cuando esto sucedía, cualquier repetición en el texto original se reflejaba directamente en el texto cifrado. Para detectar esto físicamente, se utilizaban las \textit{Banburies}: largas tiras de papel impresas en la ciudad de Banbury que permitían superponer mensajes y contar las coincidencias mediante luz que pasaba a través de agujeros perforados, un proceso que Turing denominó irónicamente \textit{ROMSing} (\textit{Resources of Modern Science}) \cite{hodges2014turing, lahoz2012turing}.
+
+\subsection{La Cuantificación del Conocimiento: El Ban y el Deciban}
+
+Para sistematizar estas observaciones, Turing inventó una medida formal de la \textit{verosimilitud} o el ``peso de la evidencia'', anticipándose por años a la teoría de la información moderna \cite{hodges2014turing, copeland2006colossus}. Introdujo el concepto de \textbf{Ban}, definido como el logaritmo de las probabilidades a favor de una hipótesis. La ventaja técnica de utilizar logaritmos era que permitía a los analistas de la Cabaña 8 sumar las evidencias de diferentes pistas en lugar de multiplicarlas, simplificando enormemente el cálculo manual \cite{hodges2014turing}.
+
+Matemáticamente, el peso de la evidencia $W$ para una hipótesis $H$ dada la evidencia $E$ se expresaba como:
+$$W(H:E) = \log_{10} \frac{P(E|H)}{P(E|\overline{H})}$$
+Donde $P(E|H)$ es la probabilidad de la evidencia si la hipótesis es cierta, y $P(E|\overline{H})$ si es falsa \cite{hodges2014turing}. Como un Ban era una unidad demasiado grande para la precisión requerida, Turing estandarizó el uso del \textbf{deciban} (una décima parte de un ban) y el \textbf{centiban} \cite{mahon1945history}. Por ejemplo, una puntuación de 17 decibanes indicaba que la probabilidad de que una configuración de rotores fuera la correcta era de aproximadamente 50 a 1, el umbral mínimo aceptado para enviar una orden a la Bombe \cite{copeland2006colossus}.
+
+\subsection{Análisis Secuencial y Reducción del Espacio de Búsqueda}
+
+La aplicación práctica del Banburismus permitió a Turing implementar lo que hoy conocemos como \textit{análisis secuencial} \cite{hodges2014turing}. En lugar de decidir de antemano cuántos datos analizar, los criptoanalistas acumulaban evidencia hasta que el peso en decibanes alcanzaba un objetivo predeterminado. Este enfoque era extraordinariamente eficiente: permitía descartar de forma manual la gran mayoría de los 336 órdenes de rotores posibles, reduciendo la tarea de la Bombe a probar apenas unos pocos casos altamente probables \cite{mahon1945history}.
+
+Un ejemplo práctico de esta potencia estadística se observaba al analizar el rotor de la derecha. Debido a que los rotores Enigma tenían diferentes puntos de rotación (\textit{turnovers}), las distancias entre las repeticiones en las \textit{Banburies} permitían deducir qué rotor estaba en la posición más rápida \cite{mahon1945history}. Si se acumulaba suficiente evidencia de que un patrón específico de repeticiones no podía ocurrir con los rotores I al V, el analista podía concluir con certeza matemática qué rotor estaba en uso sin haber encendido un solo motor eléctrico.
+
+\subsection{Convergencia entre Estadística e Ingeniería}
+
+A medida que el número de unidades Bombe aumentó hacia finales de 1943, el Banburismus fue perdiendo su papel central como herramienta de supervivencia económica de tiempo, pero su legado técnico permaneció intacto \cite{mahon1945history}. No solo permitió que Gran Bretaña resistiera la Batalla del Atlántico durante los años más oscuros de la guerra, sino que validó la aplicación de la estadística bayesiana en problemas de computación real.
+
+La capacidad de convertir conjeturas intuitivas en puntuaciones numéricas precisas (decibanes) transformó el criptoanálisis de un arte místico en una disciplina científica procesable por máquinas \cite{hodges2014turing}. Esta mentalidad de cuantificar la información fue la que permitió que Turing, tras dominar Enigma, pusiera sus ojos en un desafío aún mayor: el cifrado de teletipo \textit{Lorenz}. El éxito en este nuevo frente no solo dependería de la estadística, sino de la creación de la primera máquina electrónica programable, un hito que se detallará al analizar el impacto de Colossus en el nacimiento de la informática moderna.
+
