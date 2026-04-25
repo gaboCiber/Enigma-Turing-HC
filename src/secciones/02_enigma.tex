@@ -12,4 +12,23 @@ Con cada pulsación manual proveniente del operador de entrada, la corriente el�
 
 Pese a esta inexpugnable capa de multiplicadores matemáticos de combinaciones, la máquina fue implementada con un diseño de hardware estático conocido como \textit{Umkehrwalze} (o \textit{Reflector}). Este tambor no giratorio era la pieza terminal detrás del bloque de rotores encargada de interceptar un impulso y forzarlo a rebotar por el camino inverso del conjunto móvil nuevamente, completando y cerrando el circuito bidireccionalmente hacia el panel iluminado superior. 
 
-Si bien el propósito ingenieril originario del fabricante consistió astutamente en dotar a Enigma de reciprocidad --permitiendo idénticamente que la misma configuración diurna (\textit{Tagesschlüssel}) sirviera pragmáticamente tanto para la codificación como para su descodificación simultánea--, el reflector acarreó un colosal error axiomático que selló irónicamente el apocalipsis estructural de las comunicaciones de Alemania: obligaba, en rigor absoluto, a que por dictado logarítmico \textbf{una letra jamás fuese cifra representativa de sí misma} \cite{copeland2006colossus, copeland2004essential}. Esta fatal omisión conceptual representó el fundamento medular que otorgó la llave de triunfo a la GC\&CS, pues dotaba al analista enemigo de certezas negativas o absolutas donde toda probabilidad o enchufe que mantuviera la convalidación $A = A$ en las tablas probabilísticas quedase matemática, física e irrevocablemente descartada de la búsqueda, devaluando severamente la presunta inescrutabilidad criptográfica de Enigma.
+Si bien el propósito ingenieril originario del fabricante consistió astutamente en dotar a Enigma de reciprocidad --permitiendo idénticamente que la misma configuración diurna (\textit{Tagesschlüssel}) sirviera pragmáticamente tanto para la codificación como para su descodificación simultánea--, el reflector poseía un error de diseño fundamental que terminó siendo clave para romper el sistema: obligaba, en rigor absoluto, a que por dictado logarítmico \textbf{una letra jamás fuese cifra representativa de sí misma} \cite{copeland2006colossus, copeland2004essential}. Esta fatal omisión conceptual representó el fundamento medular que otorgó la llave de triunfo a la GC\&CS, pues dotaba al analista enemigo de certezas absolutas donde toda probabilidad que mantuviera la convalidación $A = A$ en las tablas probabilísticas quedase matemática, física e irrevocablemente descartada de la búsqueda, devaluando severamente la presunta inescrutabilidad criptográfica de Enigma.
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth,height=6cm,keepaspectratio]{imagenes/Fig2_EnigmaPhoto_Essential.png}
+        \caption{Fotografía de la máquina Enigma. Tomada de \cite{copeland2004essential}}
+        \label{fig:enigma_foto}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth,height=6cm,keepaspectratio]{imagenes/Fig1_EnigmaDiagram_Colussus.png}
+        \caption{Diagrama del flujo eléctrico. Tomada de \cite{copeland2006colossus}}
+        \label{fig:enigma_diagrama}
+    \end{subfigure}
+    \caption{La máquina Enigma y su diagrama de funcionamiento.}
+    \label{fig:enigma_conjunto}
+\end{figure}

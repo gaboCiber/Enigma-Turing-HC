@@ -3,6 +3,7 @@
 \usepackage[spanish]{babel}
 \usepackage{amsmath}   % Para \text en modo matemático
 \usepackage{graphicx}  % Para las imágenes
+\usepackage{subcaption} % Para subfiguras lado a lado
 
 % Título y Autores
 \title{ \textbf{Turing y el desciframiento de Enigma: Mecanización de la lógica contra la criptografía alemana}}
@@ -11,7 +12,35 @@
 
 \begin{document}
 
-\maketitle % Sección 1: Portada
+% Portada personalizada
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    \includegraphics[width=0.25\textwidth]{imagenes/matcom.jpg}
+    
+    {\Large \textbf{Facultad de Matemática y Computación}}
+    {\Large \textbf{Universidad de La Habana}}
+
+    \vspace{2cm}
+    
+    {\LARGE \textbf{Turing y el desciframiento de Enigma:}}\\[0.3cm]
+    {\LARGE \textbf{Mecanización de la lógica contra la criptografía alemana}}
+    
+    \vspace{1.5cm}
+    
+    {\large \textit{\textbf{Gabriel Andrés Pla Lasa}}}\\[0.2cm]
+    {\large \textit{\textbf{Carlos Daniel Largacha Leal}}}
+    
+    \vspace{0.8cm}
+    
+    {\large \textit{Historia de la Computación}}\\[0.2cm]
+    {\large \textit{4to Año}}
+    
+    \vfill
+    
+    {\large \today}
+\end{titlepage}
 
 \begin{abstract}
     Este documento presenta una síntesis analítica e histórica sobre cómo Alan Turing revolucionó el criptoanálisis durante la Segunda Guerra Mundial, aplicando métodos de lógica matemática y modelado estadístico para vencer al sistema criptográfico de la máquina Enigma. Al explotar vulnerabilidades arquitectónicas del \textit{hardware} alemán --particularmente el hecho de que ninguna letra se cifraba sobre sí misma--, junto con fallos sistemáticos y predecibles en las rutinas de los operadores humanos, Turing y su equipo en Bletchley Park diseñaron herramientas decisivas como \textit{La Bombe} y formularon técnicas probabilísticas pioneras como el \textit{Banburismus}. Estas invenciones no solo supusieron la mecanización de la deducción lógica superando la inviabilidad de los ataques por fuerza bruta, sino que lograron reducir significativamente la duración de la guerra e influir innegablemente en la victoria aliada, al mismo tiempo que cimentaban las bases fundacionales de las Ciencias de la Computación modernas.
